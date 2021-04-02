@@ -1,0 +1,414 @@
+{
+    "0x00": {
+        "prefix": "Previous Unit",
+        "description": "Previous Unit."
+    },
+    "0x04": {
+        "prefix": "Next Unit",
+        "description": "Next Unit."
+    },
+    "0x08": {
+        "prefix": "Hit Points",
+        "description": "Amount of HP that a unit currently has. Value displayed in-game is divided by 256. For example, a Marine that has 40 HP in-game would have 10240 or 0x2800 HP in memory."
+    },
+    "0x0C": {
+        "prefix": "Sprite",
+        "description": "Pointer to CSprite. Contains the graphics of the unit."
+    },
+    "0x10": {
+        "prefix": "Target Pos XY",
+        "description": "X, Y coordinates of the moving point."
+    },
+    "0x14": {
+        "prefix": "Target Unit",
+        "description": "CUnit Target Pointer"
+    },
+    "0x20": {
+        "prefix": "Movement Flags",
+        "description": "Flags that enable/disable certain movement. Need more testing.\n\n0x01 - Ordered at least once\n\n0x02 - Accelerating\n\nx04 - Breaking\n\n0x08 - Starting attack\n\n0x10 - Moving\n\n0x20 - Lifted\n\n0x40 - Unknown\n\n0x80 - Always zero"
+    },
+    "0x21": {
+        "prefix": "Current Direction 1",
+        "description": "256 directions starting from the top going clockwise."
+    },
+    "0x22": {
+        "prefix": "Flingy Turn Radius",
+        "description": "The unit flips out when this is frozen on a specific value. It will have difficulty turning, and will usually be seen walking diagonally instead of facing the direction it is actually walking towards."
+    },
+    "0x23": {
+        "prefix": "Velocity Direction 1",
+        "description": "This usually only differs from the currentDirection field for units that can accelerate and travel in a different direction than they are facing. For example Mutalisks can change the direction they are facing faster than then can change the direction they are moving."
+    },
+    "0x24": {
+        "prefix": "Flingy ID",
+        "description": "The Flingy ID of the unit."
+    },
+    "0x26": {
+        "prefix": "_unknown_0x026",
+        "description": "..."
+    },
+    "0x27": {
+        "prefix": "Flingy Movement Type",
+        "description": "The type of movement that the unit use."
+    },
+    "0x28": {
+        "prefix": "Position",
+        "description": "The coordinates of a unit on the map"
+    },
+    "0x2C": {
+        "prefix": "Halt X",
+        "description": "The X coordinate of a unit on the map"
+    },
+    "0x30": {
+        "prefix": "Halt Y",
+        "description": "The Y coordinate of a unit on the map"
+    },
+    "0x34": {
+        "prefix": "Flingy Top Speed",
+        "description": ""
+    },
+    "0x38": {
+        "prefix": "Current Speed 1",
+        "description": ""
+    },
+    "0x3C": {
+        "prefix": "Current Speed 2",
+        "description": ""
+    },
+    "0x40": {
+        "prefix": "Current Speed X",
+        "description": ""
+    },
+    "0x44": {
+        "prefix": "Current Speed Y",
+        "description": ""
+    },
+    "0x48": {
+        "prefix": "Flingy Acceleration",
+        "description": ""
+    },
+    "0x4C": {
+        "prefix": "Player ID",
+        "description": "The owner of the cunit"
+    },
+    "0x4D": {
+        "prefix": "Order ID",
+        "description": "Specification of type of order given."
+    },
+    "0x4E": {
+        "prefix": "Order State",
+        "description": "Additional order (*65536) information."
+    },
+    "0x4F": {
+        "prefix": "Order Signal",
+        "description": "Additional order (*16777216) information. Set by iscript. BWAPI doc:\n\n0x01 Update building graphic/state\n\n0x02 Casting spell\n\n0x04 Reset collision? Always enabled for hallucination...\n\n0x10 Lift/Land state"
+    },
+    "0x50": {
+        "prefix": "Order Unit Type",
+        "description": "228 = none?"
+    },
+    "0x54": {
+        "prefix": "Main Order Timer",
+        "description": "A timer for orders. An example would be the time left before a worker harvest the gas from a mine or transport unloading."
+    },
+    "0x55": {
+        "prefix": "Ground Weapon Cooldown",
+        "description": "The firing rate (or cooldown) for ground weapon."
+    },
+    "0x56": {
+        "prefix": "Air Weapon Cooldown",
+        "description": "The firing rate (or cooldown) for air weapons."
+    },
+    "0x57": {
+        "prefix": "Spell Cooldown",
+        "description": "The casting rate (or cooldown) for spells."
+    },
+    "0x58": {
+        "prefix": "Order Target X",
+        "description": "..."
+    },
+    "0x5C": {
+        "prefix": "Order Target Y",
+        "description": "..."
+    },
+    "0x60": {
+        "prefix": "Shield Points",
+        "description": "..."
+    },
+    "0x64": {
+        "prefix": "Unit Type",
+        "description": "..."
+    },
+    "0x68": {
+        "prefix": "Previous Player Unit",
+        "description": "Pointer to previous CUnit owned by the same player."
+    },
+    "0x6C": {
+        "prefix": "Next Player Unit",
+        "description": "Pointer to the next CUnit owned by the same player."
+    },
+    "0x70": {
+        "prefix": "Sub Unit",
+        "description": "Pointer to this unit's subunit CUnit."
+    },
+    "0x7C": {
+        "prefix": "Auto Target Unit",
+        "description": "The auto-acquired target (Note: This field is actually used for different targets internally, especially by the AI) (bwapi)."
+    },
+    "0x80": {
+        "prefix": "Connected Unit",
+        "description": "Addon is connected to building (addon has conntected building, but not in other direction (officially \"pAttached\") (bwapi)"
+    },
+    "0x84": {
+        "prefix": "Order Queue Count",
+        "description": "The number of queued orders a unit currently has."
+    },
+    "0x85": {
+        "prefix": "Order Queue Timer",
+        "description": "counts/cycles down from from 8 to 0 (inclusive). See also [Cycle Counter]"
+    },
+    "0x86": {
+        "prefix": "_unknown_0x086",
+        "description": ""
+    },
+    "0x87": {
+        "prefix": "Attack Notify Timer",
+        "description": ""
+    },
+    "0x8C": {
+        "prefix": "_unused_0x08C",
+        "description": ""
+    },
+    "0x8E": {
+        "prefix": "Rank Increase",
+        "description": "Adds to unit's base rank."
+    },
+    "0x8F": {
+        "prefix": "Kill Count",
+        "description": "The kill count of a unit."
+    },
+    "0x90": {
+        "prefix": "Last Attacking Player",
+        "description": "The player that last attacked this unit."
+    },
+    "0x91": {
+        "prefix": "Secondary Order Timer",
+        "description": ""
+    },
+    "0x92": {
+        "prefix": "AI Action Flag",
+        "description": "Internal use by AI only."
+    },
+    "0x93": {
+        "prefix": "User Action Flags",
+        "description": "Some flags that change when the user interacts with the unit.\n\n2 = issued an order\n\n3 = interrupted an order\n\n4 = self destructing"
+    },
+    "0x94": {
+        "prefix": "Current Button Set",
+        "description": "The current button set of a unit."
+    },
+    "0x96": {
+        "prefix": "Is Cloacked",
+        "description": ""
+    },
+    "0x97": {
+        "prefix": "Unit Movment State",
+        "description": "UM_Init = 0x00,\n\nUM_InitSeq = 0x01,\n\nUM_Lump = 0x02,\n\nUM_Turret = 0x03,\n\nUM_Bunker = 0x04,\n\nUM_BldgTurret = 0x05,\n\nUM_Hidden = 0x06,\n\nUM_Flyer = 0x07,\n\nUM_FakeFlyer = 0x08,\n\nUM_AtRest = 0x09,\n\nUM_Dormant = 0x0A,\n\nUM_AtMoveTarget = 0x0B,\n\nUM_CheckIllegal = 0x0C,\n\nUM_MoveToLegal = 0x0D,\n\nUM_LumpWannabe = 0x0E,\n\nUM_FailedPath = 0x0F,\n\nUM_RetryPath = 0x10,\n\nUM_StartPath = 0x11,\n\nUM_UIOrderDelay = 0x12,\n\nUM_TurnAndStart = 0x13,\n\nUM_FaceTarget = 0x14,\n\nUM_NewMoveTarget = 0x15,\n\nUM_AnotherPath = 0x16,\n\nUM_Repath = 0x17,\n\nUM_RepathMovers = 0x18,\n\nUM_FollowPath = 0x19,\n\nUM_ScoutPath = 0x1A,\n\nUM_ScoutFree = 0x1B,\n\nUM_FixCollision = 0x1C,\n\nUM_WaitFree = 0x1D,\n\nUM_GetFree = 0x1E,\n\nUM_SlidePrep = 0x1F,\n\nUM_SlideFree = 0x20,\n\nUM_ForceMoveFree = 0x21,\n\nUM_FixTerrain = 0x22,\n\nUM_TerrainSlide = 0x23"
+    },
+    "0x98": {
+        "prefix": "Build Queue",
+        "description": "Queue of units to build. Note that it doesn't begin with index 0, but with #buildQueueSlot index."
+    },
+    "0x9C": {
+        "prefix": "Build Queue",
+        "description": "Queue of units to build. Note that it doesn't begin with index 0, but with #buildQueueSlot index."
+    },
+    "0xA0": {
+        "prefix": "Build Queue",
+        "description": "Queue of units to build. Note that it doesn't begin with index 0, but with #buildQueueSlot index."
+    },
+    "0xA2": {
+        "prefix": "Energy",
+        "description": "Amount of energy a unit has. (value*256) * 65536"
+    },
+    "0xA4": {
+        "prefix": "Build Queue Slot",
+        "description": "Index of active unit in #buildQueue."
+    },
+    "0xA5": {
+        "prefix": "Uniqueness Identifier",
+        "description": "A byte used to determine uniqueness of the unit."
+    },
+    "0xA6": {
+        "prefix": "Secondary Order ID",
+        "description": "The order ID for passive orders such as Cloak, Build, ExpandCreep, cloaking field, etc."
+    },
+    "0xA7": {
+        "prefix": "Building Overlay State",
+        "description": "0 means the building has the largest amount of fire/blood."
+    },
+    "0xA8": {
+        "prefix": "HP Gain",
+        "description": "hp gained on construction or repair (bwapi)."
+    },
+    "0xAA": {
+        "prefix": "Shield Gain",
+        "description": "Shield gain on construction (bwapi)."
+    },
+    "0xAC": {
+        "prefix": "Remaining Build Time",
+        "description": "The remaining time before a building is constructed."
+    },
+    "0xAE": {
+        "prefix": "Previous HP",
+        "description": "Unit ID's (not pointers) of loaded units."
+    },
+    "0xC0": {
+        "prefix": "Union",
+        "description": ""
+    },
+    "0xC4": {
+        "prefix": "",
+        "description": ""
+    },
+    "0xC8": {
+        "prefix": "",
+        "description": ""
+    },
+    "0xCC": {
+        "prefix": "",
+        "description": ""
+    },
+    "0xD0": {
+        "prefix": "",
+        "description": ""
+    },
+    "0xD4": {
+        "prefix": "",
+        "description": ""
+    },
+    "0xD8": {
+        "prefix": "",
+        "description": ""
+    },
+    "0xDC": {
+        "prefix": "Status Flag",
+        "description": "[bwapi](https://github.com/bwapi/bwapi/blob/master/bwapi/BWAPI/Source/BW/UnitStatusFlags.h)"
+    },
+    "0xF8": {
+        "prefix": "Union Rally X",
+        "description": ""
+    },
+    "0xFC": {
+        "prefix": "Rally Unit's Pointer",
+        "description": ""
+    },
+    "0x104": {
+        "prefix": "Pathing Collision Interval",
+        "description": "Unknown?"
+    },
+    "0x105": {
+        "prefix": "Pathing Flags",
+        "description": "0x01 = uses pathing\n\n0x02 = ?\n\n0x04 = ? (bwapi)"
+    },
+    "0x106": {
+        "prefix": "_unused_0x106_",
+        "description": ""
+    },
+    "0x107": {
+        "prefix": "Is Being Healed",
+        "description": "Detects if a unit is currently being healed (*16777216)."
+    },
+    "0x110": {
+        "prefix": "Remove Timer",
+        "description": "When this timer equals 0, unit will be destroyed."
+    },
+    "0x112": {
+        "prefix": "Defensive Matrix Damage",
+        "description": "The amount of damage the matrix has absorbed (*16777216)."
+    },
+    "0x114": {
+        "prefix": "Defensive Matrix Timer",
+        "description": "The amount of time remaining for matrix by a science vessel."
+    },
+    "0x115": {
+        "prefix": "Stimpack Timer",
+        "description": "The amount of time remaining (*256) for the stim effect applied to a marine or firebat."
+    },
+    "0x116": {
+        "prefix": "Ensnare Timer",
+        "description": "The amount of time remaining (*65536) to ensure by a queen, infested Kerrigan.\n\nInitialised to 75 (4915200). Timers decay 1 tick per 8 frames, so 75 / 2.9762 = 25.2 RL seconds on Fastest.\n\n75 timer * 8 frame * 0.042 seconds (Which is MS)"
+    },
+    "0x117": {
+        "prefix": "Lockdown Timer",
+        "description": "The amount of time remaining (*16777216) for lockdown by a ghost.\n\nInitialised to 131 (2,197,815,296). Timers decay 1 tick per 8 frames, so 131 / 2.9762 = 44.02 RL seconds on Fastest."
+    },
+    "0x118": {
+        "prefix": "Irradiate Timer",
+        "description": "The amount of time remaining for irradiate by a science vessel."
+    },
+    "0x119": {
+        "prefix": "Stasis Timer",
+        "description": "The amount of time remaining (*256) for stasis by a arbiter."
+    },
+    "0x11A": {
+        "prefix": "Plague Timer",
+        "description": "Detects if a unit has been plagued by defiler (*65536)."
+    },
+    "0x11B": {
+        "prefix": "Storm Timer",
+        "description": "If a unit is under storm (*16777216)."
+    },
+    "0x11C": {
+        "prefix": "Irradiated By",
+        "description": "CUnit pointer to casting unit which irradiated this unit."
+    },
+    "0x120": {
+        "prefix": "Irradiate Player ID",
+        "description": "Player ID who irradiated the unit."
+    },
+    "0x121": {
+        "prefix": "Parasite Flags",
+        "description": "Detects if a unit have been infected with a parasite (*256).\n\nFlags connected to player ID. Value is a sum of:\n\nP1: 256\n\nP2: 512\n\nP3: 1024\n\nP4: 2048\n\nP5: 4096\n\nP6: 8192\n\nP7: 16384\n\nP8: 32768"
+    },
+    "0x122": {
+        "prefix": "Cycle Counter",
+        "description": "Counts/cycles up from 0 to 7 inclusive (*65536)"
+    },
+    "0x123": {
+        "prefix": "Is Blind",
+        "description": "Detects if a unit has been blinded (*16777216) by a medic."
+    },
+    "0x124": {
+        "prefix": "Maelstrom Timer",
+        "description": "The remaining time that a unit has before Maelstorm wears off."
+    },
+    "0x125": {
+        "prefix": "_unused_0x125",
+        "description": "Potentially from Valkyrie Afterburner or Ultralisk Roar."
+    },
+    "0x126": {
+        "prefix": "Acid Spore Count",
+        "description": "The amount of Acid Spores applied to a unit (*65536).\n\nThis value is incremented when a spore timer becomes non-0, and decremented when a spore timer becomes 0. It represents the extra damage (+1) and weapon cooldown (+12.5% per spore) inflicted on the current unit, and controls which overlay graphic to display and the green \"Acid Spore (x)\" rank string.\n\nArtificially decrementing this value can result in an underflow wrap-around to 255 if a spore timer subsequently decrements to 0. Unfortunately the code to remove the graphical overlay is tied to the last spore timer decrementing to 0, so simply setting this value back to 0 does not remove the graphical overlay. The best approach is to detect if the value is at least 10, then set the value to 1 and set sporeTimer[1] to 1, so that when it decrements the graphical overlay will be removed."
+    },
+    "0x127": {
+        "prefix": "Acid Spore Time",
+        "description": ""
+    },
+    "0x14C": {
+        "prefix": "_repulseUnknown",
+        "description": ""
+    },
+    "0x14D": {
+        "prefix": "Repulse Angle",
+        "description": "Updated when the air unit is being pushed (*256). Need more testing.\n\nSet entire Player ID to 0 to remove air repulsion for the CUnit."
+    },
+    "0x14E": {
+        "prefix": "bRepMtxX",
+        "description": ""
+    },
+    "0x14F": {
+        "prefix": "bRepMtxY",
+        "description": ""
+    }
+}
